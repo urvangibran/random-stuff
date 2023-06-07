@@ -1,0 +1,17 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "description": "belajar unit test",
+  "main": "sum.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Gibran",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0"
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .border{
+           width: 200px;
+           height: 200px;
+        }
+
+        .black{
+            background-color: black;
+        }
+    </style>
+    <title>Tabel WPU</title>
+</head>
+
+<body>
+    <table class="border" border="1" cellspacing="0">
+        <tr>
+            <td>1, 1</td>
+            <td>1, 2</td>
+            <td>1, 3</td>
+            <td>1, 4</td>
+        </tr>
+        <tr>
+            <td>2, 1</td>
+            <td colspan="2" rowspan="2"></td>
+            <td>2, 4</td>
+        </tr>
+        <tr>
+            <td>3, 1</td>
+            <td>3, 4</td>
+        </tr>
+        <tr>
+            <td>4, 1</td>
+            <td>4, 2</td>
+            <td>4, 3</td>
+            <td>4, 4</td>
+        </tr>
+    </table>
+    <br>
+    <table class="border" border="1" cellspacing="0">
+        <tr>
+            <td rowspan="3"></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <table class="border" border="1" cellspacing="0">
+        <tr>
+            <td class="black"></td>
+            <td class="black"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="black"></td>
+            <td class="black"></td>
+            <td></td>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="black"></td>
+            <td class="black"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+        
+</body>
+
+</html>

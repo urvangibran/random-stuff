@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Input</title>
+</head>
+
+<style>
+    #root {
+        background-color: aqua;
+        color: black;
+        font-size: 2em;
+        text-align: center;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <div id="root">
+        <input type="text" placeholder="username" id="inputUsername">
+        <input type="password" placeholder="password" id="inputPassword">
+        <button onclick="onLogin()" id="loginButton">LOGIN</button>
+        <button onclick="onLogout()" id="logoutButton">LOGOUT</button>
+        <h1 id="admin">Kamu Login Sebagai Admin</h1>
+        <h1 id="user">Kamu Login Sebagai User</h1>
+        <h1 id="warn">Masukkan Username!</h1>
+
+    </div>
+
+    <!-- <script type="application/javascript" src="onLogin.js"></script> -->
+    <script type="application/javascript">
+        let username = document.getElementById('inputUsername')
+        let password = document.getElementById('inputPassword')
+        let user = document.getElementById('user');
+        let admin = document.getElementById('admin');
+        let loginBut = document.getElementById('loginButton')
+        let logoutBut = document.getElementById('logoutButton')
+        let warn = document.getElementById('warn')
+
+        warn.style.display = "none";
+        logoutBut.style.display = "none"
+        user.style.display = "none"
+        admin.style.display = "none"
+
+        function onLogin() {
+            localStorage.setItem("username", username.value)
+            loginBut.style.display = "none";
+            logoutBut.style.display = "block"
+            if (username.value == "admin" && password.value == "123") {
+                localStorage.setItem("role", "admin");
+                username.style.display = "none";
+                password.style.display = "none";
+                user.style.display = "none"
+                admin.style.display = "block"
+            }
+            else if (username.value == "gib") {
+                console.log(typeof username.value)
+                localStorage.setItem("role", "user");
+                username.style.display = "none";
+                password.style.display = "none";
+                user.style.display = "block"
+                admin.style.display = "none"
+            }
+            else {
+                logoutBut.style.display = "block";
+                logoutBut.style.textAlign = "center";
+                logoutBut.textContent = "BACK";
+                warn.style.display = "block";
+                username.style.display = "none";
+                password.style.display = "none";
+                user.style.display = "none"
+                admin.style.display = "none"
+            }
+        }
+
+        if (localStorage.getItem('username')) {
+            loginBut.style.display = "none";
+            username.style.display = "none";
+            password.style.display = "none";
+            logoutBut.style.display = "block";
+
+            if (localStorage.getItem('role') == "admin") {
+                user.style.display = "none"
+                admin.style.display = "block"
+            }
+            else {
+                user.style.display = "block"
+                admin.style.display = "none"
+            }
+        }
+
+        function onLogout() {
+            logout = document.getElementById('logoutButton');
+
+            localStorage.clear();
+            location.reload();
+        }
+    </script>
+
+</body>
+
+</html>

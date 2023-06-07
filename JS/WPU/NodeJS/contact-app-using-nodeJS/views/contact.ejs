@@ -1,0 +1,36 @@
+<h1>Daftar Mahasiswa</h1>
+<a href="/contact/add" type="button" class= "btn btn-secondary">Add Mahasiswa</a>
+
+<% if (msg.length > 0) { %>
+    <div class="alert alert-success mt-4 " role="alert"><%= msg %></div>
+<% } %>
+
+<table class="table">
+    <% if (contacts.length === 0) { %>
+        <p>Gada KONTAK!</p>
+        <% } else { %>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">NRP</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Jurusan</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+        <tbody>
+            <% contacts.forEach((contact, i)=> { %>
+                <tr>
+                    <th scope="row"><%= ++i %></th>
+                    <td><%= contact.nama %></td>
+                    <td><%= contact.nrp %></td>
+                    <td><%= contact.email %></td>
+                    <td><%= contact.jurusan %></td>
+                    <td><a href="/contact/<%= contact.nrp %>" type="button" class="btn btn-outline-info btn-sm rounded-pill">Detail</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+        <% } %>
+</table>

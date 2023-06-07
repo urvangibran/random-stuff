@@ -1,0 +1,60 @@
+*, body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    font-size: larger;
+    font-style: italic;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    border: none;
+    background-color: white;
+    color: #222;
+    padding: 16px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#answerBox {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+button {
+    border: none;
+    background-color: rgb(123, 123, 183);
+    font-size: 24px;
+    padding: 16px;
+    margin-left: 10px;
+    height: 65px;
+    color: black;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+button:hover {
+    color: rgb(76, 70, 70);
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}

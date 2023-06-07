@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dark Mode</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a onclick="reReload()" id="home">HOME</a>
+            <a onclick="darkMode()" id="modeDark">MODE - DARK</a>
+            <a onclick="blueMode()" id="modeBlue">MODE - BLUE</a>
+        </nav>
+        <h1>Muchammad Urvan Gibran</h1>
+        <p id="info"></p>
+    </div>
+
+    <script>
+        let body = document.body;
+        let info = document.getElementById('info')
+        let modeDark = document.getElementById('modeDark')
+        let modeBlue = document.getElementById('modeBlue')
+        let home = document.getElementById('home')
+        let count_dark = 0, flag_dark = 0;
+        let count_blue = 0, flag_blue = 0;
+        let maxCount = 5, sisa;
+
+        function darkMode() {
+            if(count_dark == maxCount - 1)
+            {
+                if(flag_dark == 0 ) 
+                {
+                    body.classList.toggle('dark');
+                    flag_dark = 1;
+                }
+                info.textContent = `Kesempatan merubah dark mode sudah habis :(`
+                modeDark.style.display = "none";
+                modeBlue.style.display = "none";
+                home.textContent = "RESTART";
+                return;
+            }
+            if(count_dark&1) modeDark.textContent = "MODE - DARK";
+            else modeDark.textContent = "MODE - LIGHT";
+            count_dark++;
+            sisa = maxCount - count_dark;
+            body.classList.toggle('dark');
+            info.textContent = `Anda Sudah ${count_dark}x Merubah Dark Mode dan Sisa Kesempatan Anda ${sisa}`
+        }
+
+        function blueMode() {
+            if(count_blue == maxCount - 1)
+            {
+                if(flag_blue == 0 ) 
+                {
+                    body.classList.toggle('blue');
+                    flag_blue = 1;
+                }
+                info.textContent = `Kesempatan merubah blue mode sudah habis :(`
+                modeDark.style.display = "none";
+                modeBlue.style.display = "none";
+                home.textContent = "RESTART";
+                return;
+            }
+            if(count_blue&1) modeBlue.textContent = "MODE - BLUE";
+            else modeBlue.textContent = "MODE - LIGHT"
+            count_blue++;
+            sisa = maxCount - count_blue;
+            info.textContent = `Anda Sudah ${count_blue}x Merubah Blue Mode dan Sisa Kesempatan Anda ${sisa}`
+            body.classList.toggle('blue');
+        }
+
+        function reReload() {
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>

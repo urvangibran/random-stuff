@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList Using Javascript</title>
+</head>
+
+<body>
+    <h1>Input List</h1>
+    <form name="inputForm">
+        <table>
+            <tr>
+                <td><label for="action">Todo : </label></td>
+                <td><input type="text" name="action"></td>
+            </tr>
+            <tr>
+                <td><button>Kirim!</button></td>
+            </tr>
+
+        </table>
+    </form>
+
+    <h1>TodoList</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th><label for="search">Filter : </label></th>
+                <th><input type="text" id="search" name="search"></th>
+            </tr>
+        </thead>
+        <tbody id="tabelFilter">
+        </tbody>
+    </table>
+
+    <script>
+
+        const todoList = [];
+
+        function removeData() {
+            const tabelFilter = document.getElementById("tabelFilter")
+            while (tabelFilter.firstChild) {
+                tabelFilter.removeChild(tabelFilter.firstChild);
+            }
+        }
+
+        function removeTodo(index) {
+            todoList.splice(index, 1);
+            displayTodo();
+        }
+
+        function displayTodo() {
+            removeData();
+
+            for (let i = 0; i < todoList.length; i++) {
+                const search = document.getElementById("search").value.toLowerCase();
+
+                if (todoList[i].toLowerCase().includes(search)) {
+                    const tr = document.createElement("tr");
+                    const tdButton = document.createElement("td");
+                    tr.appendChild(tdButton);
+
+                    const buttonDone = document.createElement("button")
+                    buttonDone.textContent = "Done";
+                    buttonDone.onclick = function () {
+                        removeTodo(i);
+                    }
+                    tdButton.appendChild(buttonDone);
+
+                    const tdDesc = document.createElement("td");
+                    tdDesc.textContent = todoList[i];
+                    tr.appendChild(tdDesc);
+
+                    const tabelFilter = document.getElementById("tabelFilter")
+                    tabelFilter.appendChild(tr);
+                }
+            }
+        }
+
+        document.forms['inputForm'].onsubmit = function (event) {
+            event.preventDefault();
+
+            const todo = document.forms['inputForm']['action'].value;
+            todoList.push(todo);
+
+            document.forms['inputForm'].reset();
+            displayTodo();
+        }
+
+        const searchText = document.getElementById("search");
+        searchText.onkeydown = function () {
+            displayTodo();
+        }
+        searchText.onkeyup = function () {
+            displayTodo();
+        }
+
+    </script>
+
+</body>
+
+</html>

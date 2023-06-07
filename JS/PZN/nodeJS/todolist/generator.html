@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Lazy Function (generator)
+        function* angkaGanjil(num) {
+            for (let i = 0; i < num; i++) {
+                if (i % 2 === 1) {
+                    document.writeln(`<p>Yield ${i}</p>`);
+                    yield i;
+
+                }
+            }
+        }
+
+        //eager function 
+        function angkaGanjilArray(num) {
+            const res = [];
+            for (let i = 0; i < num; i++) {
+                if (i % 2 === 1) {
+                    document.writeln(`<p>Yield ${i}</p>`);
+                    res.push(i);
+                }
+            }
+            return res;
+        }
+
+        const numGanjil = angkaGanjil(10);
+        for (const iterator of numGanjil) {
+            document.writeln(iterator)
+        }
+
+        const numGanjilArray = angkaGanjilArray(10);
+        for (const iterator of numGanjilArray) {
+            document.writeln(iterator);
+        }
+
+    </script>
+
+</body>
+
+</html>

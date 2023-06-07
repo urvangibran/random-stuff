@@ -1,0 +1,126 @@
+*, body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Caveat', cursive;
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+:root {
+    --bg-primary: rgb(70, 89, 255);
+    --bg-secondary: #eaeaea;
+    --txt-primary: #f7f7f7;
+    --txt-secondary: #222;
+    --icons-bg-primary: tomato;
+    --icons-bg-secondary: #777;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: var(--bg-primary);
+}
+
+.container2 {
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    /* bawah: ketika melebihi widht maka turun kebawah */
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 40%;
+    border: 1px solid white;
+    background-color: var(--bg-secondary);
+    color: var(--txt-secondary);
+    padding: 32px;
+    margin: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+}
+
+.icons {
+    font-size: 24px;
+    margin-top: 8px;    
+    color: var(--icons-bg-primary);
+}
+
+.icons-twit {
+    color: rgb(48, 140, 245);
+}
+
+.icons-ins {
+    color: rgb(234, 100, 100);
+}
+
+.description {
+    margin-top: 8px;
+    font-size: .8em;
+}
+
+.btn {
+    margin-top: 16px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+btn:hover {
+    background-color: var(--bg-primary);
+    color: var(--txt-primary); 
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+
+@media screen and (max-width: 476px) {
+    .container {
+        background-color: white ;
+    }
+
+    .card {
+        width: 95%;
+    }
+
+    .title {
+        font-size: 3em;
+    }
+
+    .icons {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        padding: 16px;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        display: none;
+    }
+
+    .container2 {
+        display: block;
+    }
+}
+
+
+

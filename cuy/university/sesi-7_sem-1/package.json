@@ -1,0 +1,15 @@
+{
+  "name": "sesi-7_sem-1",
+  "version": "1.0.0",
+  "description": "sesi 7 semester 1",
+  "main": "index.js",
+  "scripts": {
+    "nyala": "nodemon index.js"
+  },
+  "author": "urvangibran",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22",
+    "rupiah-format": "^1.0.0"
+  }
+}

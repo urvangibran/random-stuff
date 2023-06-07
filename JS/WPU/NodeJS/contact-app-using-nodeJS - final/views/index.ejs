@@ -1,0 +1,14 @@
+    <h1>Belajar Node JS</h1>
+    <p>Bab <span style="background-color: #0000ff;">Express</span> JS</p>
+    <h3>Nama : <%= nama %> </h3>
+    <h2>Daftar Mahasiswa</h2>
+    <% if (mahasiswa.length < 1) { %>
+     <%= "Mahasiswa Kosong d" %>
+    <% } %>
+    <% mahasiswa.forEach(mhs => { %>
+        <ul>
+            <li>Nama: <%= mhs.nama %></li>
+            <li>Umur: <%= mhs.umur %></li>
+        </ul>
+    <% }) %>
+        

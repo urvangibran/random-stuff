@@ -1,0 +1,12 @@
+*.exe
+.vscode
+node_modules
+For C/no_upload
+For C/test.exe
+For C++/no_upload
+For C++/test.exe
+For C++ (Advanced)/no_upload
+For C++ (Advanced)/test.exe
+Miscellaneousses
+wiki
+Ans

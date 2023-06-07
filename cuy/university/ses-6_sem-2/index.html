@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Trailer</title>
+</head>
+<style>
+    *,
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #trailer {
+        min-width: 100%;
+        min-height: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    .intro {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        color: white;
+        padding: 20px;
+        font-size: 20px;
+        font-family: fantasy;
+    }
+
+
+    .desc {
+        font-size: 1.3em;
+    }
+
+    #btn {
+         margin-top: 20px;
+         border: none;
+         /* padding: 16px; */
+         border-radius: 10px;
+         color: white;
+         background-color: black;
+         font-weight: 800;
+         width: 120px;
+         height: 44px;
+         cursor: pointer;
+    }
+
+    #btn:hover {
+        background-color: grey;
+        transition: all .5s ease-in-out 0s;
+    }
+</style>
+
+<body>
+    <video id="trailer" src="game_trailer.mp4" autoplay muted loop></video>
+    <div class="intro">
+        <center>
+            <img src="roblox-logo.png" alt="logo"
+            width="130" height="130">
+            <p class="desc">Roblox adalah game yang sangant diminati oleh anak-anak</p>
+            <button id="btn" onclick="videoStart()">PAUSE</button>
+        </center>
+    </div>
+
+    <script>
+        let btn = document.getElementById("btn");
+        const trailer = document.getElementById("trailer")
+
+        function videoStart() {
+            if(trailer.paused) {
+                trailer.play();
+                btn.innerHTML = "PAUSE";
+            } else {
+                trailer.pause();
+                btn.innerHTML = "PLAY";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
